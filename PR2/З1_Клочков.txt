@@ -1,0 +1,28 @@
+fun main() {
+    val inputString = "AAADSSSRRTTHAAAA"
+    var currentChar = inputString[0]
+    var count = 1
+    var result = ""
+
+    for (i in 1 until inputString.length) {
+        if (inputString[i] == currentChar) {
+            count++
+        } else {
+            if (count > 1) {
+                result += "$currentChar$count"
+            } else {
+                result += currentChar
+            }
+            currentChar = inputString[i]
+            count = 1
+        }
+    }
+
+    if (count > 1) {
+        result += "$currentChar$count"
+    } else {
+        result += currentChar
+    }
+
+    println(result)
+}

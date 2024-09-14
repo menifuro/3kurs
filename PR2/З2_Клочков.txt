@@ -1,0 +1,12 @@
+fun main() {
+    val inputString = "AASADDSS"
+    val charCount = mutableMapOf<Char, Int>()
+
+    for (char in inputString) {
+        charCount[char] = (charCount[char] ?: 0) + 1
+    }
+
+    charCount.toSortedMap().forEach { (char, count) ->
+        println("$char - $count")
+    }
+}
